@@ -3,7 +3,7 @@
 #NoTrayIcon
 #NoEnv
 
-PrefferredDir := "D:\dev" ; The default directory to open if the current expolorer path isn't valid.
+PrefferredDir := "C:\dev" ; The default directory to open if the current expolorer path isn't valid.
 UbuntuProfileName := "Ubuntu" ; The name of the alternate windows profile (Found in settings.json of windows terminal)
 
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
@@ -37,7 +37,7 @@ DesktopPath := RegExReplace(A_Desktop, "\\", "\\\\" ) ; Sanitize the path to wor
 		args .= """" . path . """"
 	}
 	else {
-		args .= "D:\dev"
+		args .= PrefferredDir
 	}
 	args .= " -p " . UbuntuProfileName ; -p arg requests wt to open with a specific profile.
 	
