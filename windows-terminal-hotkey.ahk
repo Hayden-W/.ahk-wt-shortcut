@@ -39,7 +39,8 @@ DesktopPath := RegExReplace(A_Desktop, "\\", "\\\\" ) ; Sanitize the path to wor
 	else {
 		args .= "D:\dev"
 	}
-
-	Run wt.exe %args% . " -p " . UbuntuProfileName ; -p arg requests wt to open with a specific profile.
+	args .= " -p " . UbuntuProfileName ; -p arg requests wt to open with a specific profile.
+	
+	Run wt.exe %args%
 	keywait, u ; Wait for the key to be released before returning, otherwise multiple terminals can be spawned by one key press.
 	return
